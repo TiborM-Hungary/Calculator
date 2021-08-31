@@ -1,37 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
-  All rights reserved. Use is subject to license terms.
-
-  This file is available and licensed under the following license:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions
-  are met:
-
-  - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-  - Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in
-    the documentation and/or other materials provided with the distribution.
-  - Neither the name of Oracle Corporation nor the names of its
-    contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -43,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerCalculator">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -91,25 +59,28 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <Label id="label_display" layoutX="47.0" layoutY="14.0" prefHeight="57.0" prefWidth="537.0" style="-fx-background-color: #DCDCDC;" />
-            <Button id="number_seven" layoutX="53.0" layoutY="92.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="7" />
-            <Button id="number_eight" layoutX="142.0" layoutY="92.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="8" />
-            <Button id="number_nine" layoutX="231.0" layoutY="92.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="9" />
-            <Button id="number_four" layoutX="53.0" layoutY="147.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="4" />
-            <Button id="number_five" layoutX="142.0" layoutY="147.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="5" />
-            <Button id="number_six" layoutX="231.0" layoutY="149.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="6" />
-            <Button id="number_one" layoutX="53.0" layoutY="204.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="1" />
-            <Button id="number_two" layoutX="142.0" layoutY="204.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="2" />
-            <Button id="number_three" layoutX="231.0" layoutY="204.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="3" />
-            <Button id="number_zero" layoutX="53.0" layoutY="261.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="0" />
-            <Button id="button_plus" layoutX="406.0" layoutY="91.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="+" />
-            <Button id="button_minus" layoutX="495.0" layoutY="91.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="-" />
-            <Button id="button_multiply" layoutX="406.0" layoutY="148.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="*" />
-            <Button id="button_divide" layoutX="495.0" layoutY="148.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="/" />
-            <Button id="button_parenthesis_open" layoutX="406.0" layoutY="203.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="(" />
-            <Button id="button_parenthesis_close" layoutX="495.0" layoutY="205.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text=")" />
-            <Button id="button_equal" layoutX="406.0" layoutY="260.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="=" />
-            <Button id="button_reset" layoutX="495.0" layoutY="260.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="C" />
+            <Label id="label_display" fx:id="label_display" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="47.0" layoutY="14.0" prefHeight="57.0" prefWidth="537.0" style="-fx-background-color: #DCDCDC;" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Button id="number_seven" fx:id="number_seven" layoutX="53.0" layoutY="92.0" mnemonicParsing="false" onAction="#numpad_07_pressed" prefHeight="57.0" prefWidth="89.0" text="7" />
+            <Button id="number_eight" fx:id="number_eight" layoutX="142.0" layoutY="92.0" mnemonicParsing="false" onAction="#numpad_08_pressed" prefHeight="57.0" prefWidth="89.0" text="8" />
+            <Button id="number_nine" fx:id="number_nine" layoutX="231.0" layoutY="92.0" mnemonicParsing="false" onAction="#numpad_09_pressed" prefHeight="57.0" prefWidth="89.0" text="9" />
+            <Button id="number_four" fx:id="number_four" layoutX="53.0" layoutY="147.0" mnemonicParsing="false" onAction="#numpad_04_pressed" prefHeight="57.0" prefWidth="89.0" text="4" />
+            <Button id="number_five" fx:id="number_five" layoutX="142.0" layoutY="147.0" mnemonicParsing="false" onAction="#numpad_05_pressed" prefHeight="57.0" prefWidth="89.0" text="5" />
+            <Button id="number_six" fx:id="number_six" layoutX="231.0" layoutY="149.0" mnemonicParsing="false" onAction="#numpad_06_pressed" prefHeight="57.0" prefWidth="89.0" text="6" />
+            <Button id="number_one" fx:id="number_one" layoutX="53.0" layoutY="204.0" mnemonicParsing="false" onAction="#numpad_01_pressed" prefHeight="57.0" prefWidth="89.0" text="1" />
+            <Button id="number_two" fx:id="number_two" layoutX="142.0" layoutY="204.0" mnemonicParsing="false" onAction="#numpad_02_pressed" prefHeight="57.0" prefWidth="89.0" text="2" />
+            <Button id="number_three" fx:id="number_three" layoutX="231.0" layoutY="204.0" mnemonicParsing="false" onAction="#numpad_03_pressed" prefHeight="57.0" prefWidth="89.0" text="3" />
+            <Button id="number_zero" fx:id="number_zero" layoutX="53.0" layoutY="261.0" mnemonicParsing="false" onAction="#numpad_00_pressed" prefHeight="57.0" prefWidth="89.0" text="0" />
+            <Button id="button_plus" fx:id="number_plus" layoutX="406.0" layoutY="91.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="+" />
+            <Button id="button_minus" fx:id="number_minus" layoutX="495.0" layoutY="91.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="-" />
+            <Button id="button_multiply" fx:id="number_multiply" layoutX="406.0" layoutY="148.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="*" />
+            <Button id="button_divide" fx:id="number_divide" layoutX="495.0" layoutY="148.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="/" />
+            <Button id="button_parenthesis_open" fx:id="number_parenthesis_open" layoutX="406.0" layoutY="203.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="(" />
+            <Button id="button_parenthesis_close" fx:id="number_parenthesis_close" layoutX="495.0" layoutY="205.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text=")" />
+            <Button id="button_equal" fx:id="number_equal" layoutX="406.0" layoutY="260.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="=" />
+            <Button id="button_reset" fx:id="number_reset" layoutX="495.0" layoutY="260.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="89.0" text="C" />
       </children>
     </AnchorPane>
       <Label prefHeight="17.0" prefWidth="223.0" text="Java - Calculator - TiborM-Hungary">

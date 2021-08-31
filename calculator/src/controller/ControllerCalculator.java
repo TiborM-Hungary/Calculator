@@ -98,6 +98,47 @@ public class ControllerCalculator implements Initializable {
         }
     }
 
+    @FXML
+    public void numpad_01_pressed(){
+        setButtonValue(1);
+    }
+    @FXML
+    public void numpad_02_pressed(){
+        setButtonValue(2);
+    }
+    @FXML
+    public void numpad_03_pressed(){
+        setButtonValue(3);
+    }
+    @FXML
+    public void numpad_04_pressed(){
+        setButtonValue(4);
+    }
+    @FXML
+    public void numpad_05_pressed(){
+        setButtonValue(5);
+    }
+    @FXML
+    public void numpad_06_pressed(){
+        setButtonValue(6);
+    }
+    @FXML
+    public void numpad_07_pressed(){
+        setButtonValue(7);
+    }
+    @FXML
+    public void numpad_08_pressed(){
+        setButtonValue(8);
+    }
+    @FXML
+    public void numpad_09_pressed(){
+        setButtonValue(9);
+    }
+    @FXML
+    public void numpad_00_pressed(){
+        setButtonValue(0);
+    }
+
     //Actions per button pressed - operators
 
     @FXML
