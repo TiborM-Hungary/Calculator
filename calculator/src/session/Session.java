@@ -1,5 +1,7 @@
 package session;
 
+import java.util.ArrayList;
+
 public class Session {
     /**
      * This a singleton class
@@ -15,49 +17,27 @@ public class Session {
     }
 
     //Empty constructor
-    private static Session sessionValue;
+    private static Session sessionInstance;
 
-    //Getter - to get the the instance of this class - Singleton
-    public static Session getSessionValue() {
+    //Getter - to get the instance of this class - Singleton
+    public static Session getSessionInstance() {
         //Failsafe - if there is no instance of the class at this point, we create it
-        if (sessionValue == null) {
-            sessionValue = new Session();
+        if (sessionInstance == null) {
+            sessionInstance = new Session();
         }
-        return sessionValue;
+        return sessionInstance;
     }
 
-    //Getter - Setter - for the integer in the Singleton class, that holds the value of the calculation for us
-    //The Integer is private, only accessible via the getter and setter
-    private Integer currentValue;
+    //Need an operatorPressed boolean to know, when to move onto the second number --> false-first number, true-second number is entered
 
-    public Integer getCurrentValue() {
-        return currentValue;
+    boolean operatorHasBeenPressed = false;
+
+    public boolean isOperatorHasBeenPressed() {
+        return operatorHasBeenPressed;
     }
 
-    public void setCurrentValue(Integer currentValue) {
-        this.currentValue = currentValue;
-    }
-
-    //Getter - Setter - for the 1st number in the Singleton class, that holds the value of the last button pressed for us
-    private Integer firstNumber;
-
-    public Integer getFirstNumber() {
-        return firstNumber;
-    }
-
-    public void setFirstNumber(Integer firstNumber) {
-        this.firstNumber = firstNumber;
-    }
-
-    //Getter - Setter - for the 2nd number in the Singleton class, that holds the value of the last button pressed for us
-    private Integer secondNumber;
-
-    public Integer getSecondNumber() {
-        return secondNumber;
-    }
-
-    public void setSecondNumber(Integer secondNumber) {
-        this.secondNumber = secondNumber;
+    public void setOperatorHasBeenPressed(boolean operatorHasBeenPressed) {
+        this.operatorHasBeenPressed = operatorHasBeenPressed;
     }
 
     //Getter - Setter - for booleans to track current operation
@@ -66,10 +46,6 @@ public class Session {
     boolean subtract = false;
     boolean multiply = false;
     boolean divide = false;
-
-    //boolean for tracking parenthesis probably not the best idea
-    boolean parenthesisOpen = false;
-    boolean parenthesisClosed = false;
 
     public boolean isAdd() {
         return add;
@@ -101,5 +77,18 @@ public class Session {
 
     public void setDivide(boolean divide) {
         this.divide = divide;
+    }
+
+    //Two arraylists to hold the integers entered
+
+    ArrayList<Integer> multiDigitFirstNumber = new ArrayList<>();
+    ArrayList<Integer> multiDigitSecondNumber = new ArrayList<>();
+
+    public ArrayList<Integer> getMultiDigitFirstNumber() {
+        return multiDigitFirstNumber;
+    }
+
+    public ArrayList<Integer> getMultiDigitSecondNumber() {
+        return multiDigitSecondNumber;
     }
 }
